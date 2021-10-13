@@ -12,10 +12,24 @@ describe('Handling Web tables', () => {
         cy.get('table.dataTable>tbody>tr:first-child>td').should('have.length', 6)
 
         //Get single row data
-        cy.get('table.dataTable>tbody>tr').eq(2).within(() => {
+        cy.get('table.dataTable>tbody>tr').eq(10).within(() => {
+
             cy.get('td').then((element) => {
-                cy.
+                cy.log(element.text())
             })
+
+            cy.get('td').eq(0).should('contain.text', 'Hindustan')
+
+        })
+
+        //Validate data based cell value
+        cy.get('table.dataTable').contains('HDFC Bank Ltd').parent().parent().within(() => {
+
+            cy.get('td').eq(2).then((element) => {
+                cy.log('Current price is ' + element.text())
+                expect(element).to.contain('1639.05')
+            })
+
         })
     });
     
