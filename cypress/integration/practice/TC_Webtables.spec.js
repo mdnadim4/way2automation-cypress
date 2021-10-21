@@ -3,6 +3,7 @@
 describe('Handling Web tables', () => {
 
     it('Verify webtable option', () => {
+
         cy.visit('https://money.rediff.com/indices/bse/sensex')
 
         //total rows
@@ -43,7 +44,6 @@ describe('Handling Web tables', () => {
             })
 
         })
-
 
     });
     
