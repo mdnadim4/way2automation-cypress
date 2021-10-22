@@ -1,5 +1,10 @@
 {
     "chromeWebSecurity": false,
     "baseUrl": "https://www.google.com",
-    "pageLoadTimeOut": 120000
+    "pageLoadTimeOut": 120000,
+
+    "retries": {
+        "runMode": 0,
+        "openMode": 0
+      }
 }
