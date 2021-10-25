@@ -1,10 +1,28 @@
 /// <reference types="Cypress" />
 
-describe('Handling Tabs', () => {
+describe('Handling Upload File', () => {
 
-    it('Verify tabs option', () => {
+    beforeEach(() => {
         cy.visit('http://www.webdriveruniversity.com/')
-        cy.get('#contact-us').invoke('removeAttr', 'target').click()
+        cy.get('#file-upload').invoke('removeAttr', 'target').click()
+    })
+
+    it('Verify File Upload option', () => {
+
+        const file = 'upload.png';
+
+        cy.get('#myFile').attachFile(file);
+
+        cy.get('#submit-button').click()
+
+        cy.readFile(file, 'base64').should('not.exist')
+
+    });
+
+    it('Verify No File Upload', () => {
+
+        cy.get('#submit-button').click()
+
     });
     
 });
