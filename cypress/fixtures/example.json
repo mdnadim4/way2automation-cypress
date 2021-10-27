@@ -4,5 +4,6 @@
   "password": "123456",
   "gender": "Female",
   "status": "option1",
-  "date": "01/02/1985"
+  "date": "1985-02-01",
+  "success": "Success! The Form has been submitted successfully"
 }
