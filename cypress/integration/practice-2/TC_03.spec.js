@@ -77,7 +77,13 @@ describe('Handling Checkbox Element', () => {
         cy.go("back")
     });
 
-    it.only('Verify Mouseover Event', () => {
+    it.only('Verify Child Window', () => {
+
+        cy.get('#openwindow').invoke('href', 'http://www.qaclickacademy.com/').click()
+
+    });
+
+    it('Verify Mouseover Event', () => {
 
         cy.get('#mousehover').trigger('mouseover')
         cy.contains('Top').click({force: true})
